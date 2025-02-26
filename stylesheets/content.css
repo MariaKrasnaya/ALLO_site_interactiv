@@ -1,0 +1,20 @@
+*{ box-sizing: border-box;}
+
+@font-face {
+font-family: "CarlaSansLight";
+src: url("../fonts/CarlaSansLight.ttf") format("truetype");
+font-style: Light;
+font-weight: Light;
+}
+
+.section1 {
+width: 100vw;
+height: 100vw;
+}
+
+.columns_all {
+display: flex;
+flex-direction: row;
+width: 100vw;
+height: 100vw;
+}
