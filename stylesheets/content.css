@@ -23,31 +23,26 @@ flex-wrap: nowrap;
 .column1{
   width: 20vw;
   height: 100vw;
-  background-image: url(./images/Column_1.png);
 }
 
 .column2{
   width: 20vw;
   height: 100vw;
-  background-image: url(./images/Column_2.png);
 }
 
 .column3{
   width: 20vw;
   height: 100vw;
-  background-image: url(./images/Column_3.png);
 }
 
 .column4{
   width: 20vw;
   height: 100vw;
-  background-image: url(./images/Column_4.png);
 }
 
 .column5{
   width: 20vw;
   height: 100vw;
-  background-image: url(./images/Column_5.png);
 }
 
 .column {
