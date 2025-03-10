@@ -1,15 +1,15 @@
 *{ box-sizing: border-box;}
 
 @font-face {
-font-family: "CarlaSansLight";
-src: url("../fonts/CarlaSansLight.ttf") format("truetype");
+font-family: "FliegeMono";
+src: url("../fonts/FliegeMonoVF.woff2") format("woff");
 font-style: Light;
 font-weight: Light;
 }
 
 .section1 {
 width: 100vw;
-height: 100vw;
+height: 56vw;
 }
 
 .columns_all {
@@ -20,44 +20,121 @@ height: 100vw;
 flex-wrap: nowrap;
 }
 
-.column1{
-  width: 20vw;
-  height: 100vw;
-}
-
-.column2{
-  width: 20vw;
-  height: 100vw;
-}
-
-.column3{
-  width: 20vw;
-  height: 100vw;
-}
-
-.column4{
-  width: 20vw;
-  height: 100vw;
-}
-
-.column5{
-  width: 20vw;
-  height: 100vw;
-}
-
 .column {
 width: 20vw;
-height: 100vw;
+height: 56vw;
+}
+
+.n1{
+  background-image: url(../images/Column_1.png);
+  background-size: 100% auto;
+}
+
+.n2{
+  background-image: url(../images/Column_2.svg);
+  background-size: 100% auto;
+}
+
+.n3{
+  background-image: url(../images/Column_3.png);
+  background-size: 100% auto;
+}
+
+.n4{
+  background-image: url(../images/Column_4.svg);
+  background-size: 100% auto;
+}
+
+.n5{
+  background-image: url(../images/Column_5.svg);
+  background-size: 100% auto;
+}
+
+.number {
+width: 100%;
+display: flex;
+flex-direction: row;
+position: absolute;
+color: white;
+font-family: "FliegeMono";
+font-weight: 400;
+font-size: 3vw;
+margin-left: 9%;
+margin-top: 51vw;
+}
+
+.numbers {
+width: 20vw;
+justify-content: center;
 }
 
 .information {
 position: absolute;
-margin-left: 100vw;
+margin-left: 93vw;
 margin-top: -100vw;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 7vw;
+height: 7.2vw;
+background-color: black;
 }
 
-.information img{
-width: 10vw;
-height: 10vw;
+.information p{
+color: #FA4A22;
+font-family: "FliegeMono";
+font-weight: 400;
+font-size: 6vw;
 }
 
+.information p:hover {
+color: white;
+}
+
+.section2 {
+width: 100vw;
+height: 56vw;
+background-color: black;
+}
+
+.glitch-text{
+color: #0051FF;
+font-family: "FliegeMono";
+font-weight: 400;
+font-size: 6vw;
+}
+
+/* blur */
+.blur-effect {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: morph 2s infinite alternate ease-in-out;
+}
+
+@keyframes morph {
+  0% {
+      border-radius: 50% 30% 50% 30%;
+  }
+  50% {
+      border-radius: 30% 50% 30% 50%;
+  }
+  100% {
+      border-radius: 50% 50% 30% 50%;
+  }
+}
+/* blur */
+
+/* glitch */
+
+/* glitch */
+
+.section3 {
+width: 100vw;
+height: 56vw;
+background-color: #FA4A22;
+}
