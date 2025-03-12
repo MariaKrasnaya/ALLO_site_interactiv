@@ -109,7 +109,7 @@ font-size: 6vw;
   position: absolute;
   width: 130px;
   height: 130px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 255, 0.2); /* Синий оттенок */
   backdrop-filter: blur(10px);
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -134,7 +134,70 @@ font-size: 6vw;
 /* glitch */
 
 .section3 {
+display: flex;
 width: 100vw;
 height: 56vw;
 background-color: #FA4A22;
 }
+
+/* Nona */
+.popup {
+  display: none; /* Изначально скрыт */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0051FF; /* Синий полупрозрачный фон */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.popup-content {
+  background-color: #fff;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.popup h2 {
+  margin-bottom: 20px;
+}
+
+#popupInput {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+button {
+width: 20vw;
+height: 5vw;
+padding: 10px 20px;
+background-color: #0051FF; /* Синий цвет для кнопок */
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Темный синий при наведении */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+/* Nona */
