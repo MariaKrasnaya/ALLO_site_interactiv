@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
           blurSpot.style.left = `${event.pageX}px`;
           blurSpot.style.top = `${event.pageY}px`;
           document.body.appendChild(blurSpot);
-      }
-  });
+      }});
+
+  
+
 
 // glitch
         const originalText = document.getElementById("glitchText").innerText;

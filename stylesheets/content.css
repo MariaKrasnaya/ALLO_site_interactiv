@@ -95,6 +95,7 @@ color: white;
 width: 100vw;
 height: 56vw;
 background-color: black;
+overflow: hidden;
 }
 
 .glitch-text{
@@ -107,8 +108,8 @@ font-size: 6vw;
 /* blur */
 .blur-effect {
   position: absolute;
-  width: 130px;
-  height: 130px;
+  width: 13vw;
+  height: 13vw;
   background: rgba(0, 0, 255, 0.2); /* Синий оттенок */
   backdrop-filter: blur(10px);
   pointer-events: none;
