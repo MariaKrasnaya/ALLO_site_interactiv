@@ -178,8 +178,70 @@ sectionElement.addEventListener('mouseleave', () => {
 });
 
  
+// экран третий
+// Получаем элементы с экрана
+const sectionThree = document.querySelector('.section3');
+const bluePanel = document.querySelector('.blue-panel');
+const inputField = document.getElementById('userInput');
+const encryptButton = document.getElementById('encryptButton');
 
+// Нажатие на кнопку "ЗАШИФРОВАТЬ"
+encryptButton.addEventListener('click', function () {
+    const userText = inputField.value.trim();
 
+    // Проверяем, что поле не пустое
+    if (userText !== "") {
+        // Скрываем синюю плашку плавно
+        bluePanel.style.transition = 'opacity 0.5s ease';
+        bluePanel.style.opacity = '0';
+
+        setTimeout(function () {
+            // Полностью скрываем плашку
+            bluePanel.style.display = 'none';
+
+            // Создаем новый элемент с плывущим текстом
+            const floatingTextElement = document.createElement('div');
+            floatingTextElement.classList.add('floating-text');
+            floatingTextElement.textContent = userText;
+
+            // Добавляем текст в секцию section3
+            sectionThree.appendChild(floatingTextElement);
+
+            // Задаем начальную позицию текста ВНУТРИ section3
+            floatingTextElement.style.position = 'absolute';
+            floatingTextElement.style.top = '50%'; // По центру вертикали section3
+            floatingTextElement.style.left = '0'; // Начинает с левой границы section3
+            floatingTextElement.style.transform = 'translateY(-50%)'; // Точный вертикальный центр
+
+            // Движение текста
+            let position = 0;
+            const speed = 2;
+
+            function moveText() {
+                position += speed;
+                floatingTextElement.style.left = position + 'px';
+
+                // Сбрасываем текст, когда он выходит за границу section3
+                if (position > sectionThree.clientWidth) {
+                    position = -floatingTextElement.clientWidth;
+                }
+
+                requestAnimationFrame(moveText);
+            }
+
+            // Запускаем анимацию текста
+            moveText();
+
+            // Плавно показываем текст
+            setTimeout(function () {
+                floatingTextElement.style.opacity = '1';
+            }, 100);
+
+        }, 500);
+    } else {
+        alert("Пожалуйста, введите текст перед шифрованием!");
+    }
+});
 
 
 
