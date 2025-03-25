@@ -66,6 +66,20 @@ margin-top: 51vw;
 .numbers {
 width: 20vw;
 justify-content: center;
+animation: numbers 2s ease-in-out infinite;
+animation-play-state: running;
+cursor: pointer;
+}
+
+@keyframes numbers {
+  0% {color: white;}
+  50% {color: #FA4A22;}
+  100% {color: white;}
+
+}
+
+.numbers:hover {
+animation-play-state: paused;
 }
 
 .information {
@@ -78,6 +92,7 @@ align-items: center;
 width: 7vw;
 height: 7.2vw;
 background-color: black;
+cursor: pointer;
 }
 
 .information p{
@@ -91,48 +106,83 @@ font-size: 6vw;
 color: white;
 }
 
-.section2 {
-width: 100vw;
-height: 56vw;
-background-color: black;
-overflow: hidden;
+/* Стили для всплывающего окна */
+.popup_i {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-start; /* Прижимаем окно к верху */
+  background: rgba(0, 0, 0, 0.6); /* Затемнение фона */
+  z-index: 1000;
 }
 
-.glitch-text{
+.popup_i-content {
+  background: black;
+  padding: 2.8vw;
+  width: 53vw;
+  text-align: left;
+  position: relative;
+  top: 5%;
+  transform: translateY(0);
+  border-radius: 2px;
+}
+
+/* Стиль текста внутри окна */
+.popup_i-content p {
+  font-family: "FliegeMono";
+  font-weight: 400;
+  font-size: 1vw;
+  color: white;
+  text-transform: uppercase;
+  line-height: 1.5vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* второй экран */
+.section2 {
+position: relative;
+width: 100vw;
+height: 100vh;
+background-color: black;
+overflow: hidden;
+cursor: url('../images/cursor_sec_2.png'), auto;
+}
+.glitchText{
 color: #0051FF;
 font-family: "FliegeMono";
 font-weight: 400;
 font-size: 6vw;
+user-select: none; /* Запрещаем выделение текста */
+transition: all 0.5s ease-in-out;
+hyphens: auto; /* Автоматический перенос по слогам */
+word-break: break-word; /* Перенос длинных слов */
 }
 
-/* blur */
-.blur-effect {
-  position: absolute;
-  width: 13vw;
-  height: 13vw;
-  background: rgba(0, 0, 255, 0.2); /* Синий оттенок */
-  backdrop-filter: blur(10px);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  animation: morph 2s infinite alternate ease-in-out;
+/* Зададим свой стиль курсору */
+.section2.active {
+  cursor: url('../images/cursor_sec_2.png') 16 16, auto; /* 16 16 — координаты точки клика */
 }
 
-@keyframes morph {
-  0% {
-      border-radius: 50% 30% 50% 30%;
-  }
-  50% {
-      border-radius: 30% 50% 30% 50%;
-  }
-  100% {
-      border-radius: 50% 50% 30% 50%;
-  }
-}
-/* blur */
 
-/* glitch */
 
-/* glitch */
+
+
+
+
+
 
 .section3 {
 display: flex;
@@ -147,8 +197,8 @@ background-color: #FA4A22;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   background-color: #0051FF; /* Синий полупрозрачный фон */
   z-index: 1000;
   justify-content: center;
