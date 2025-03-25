@@ -185,10 +185,13 @@ overflow: hidden;
   background-color: #0051FF;
   padding: 2vw;
   width: 60%;
+  height: auto;
   max-width: 600px;
+  min-width: fit-content;
+  min-height: fit-content;
   text-align: center;
   position: relative;
-  border-radius: 1vw;
+  border-radius: 0.5vw;
 }
 
 .dots {
@@ -215,11 +218,13 @@ h2 {
 input {
   width: 80%;
   padding: 1.5vw;
-  border: none;
-  border-radius: 5px;
+  border-color: #FA4A22;
+  border-width: 0.4vw;
+  border-radius: 0.5vw;
   margin-bottom: 15px;
   font-size: 16px;
   text-align: center;
+  background-color: #0051FF;
 }
 
 button {
@@ -245,7 +250,7 @@ button:hover {
   font-size: 24px;
   white-space: nowrap;
   opacity: 0;
-  animation: floatText 1s linear infinite;
+  animation: floatText 1s ease-in-out infinite;
 }
 
 @keyframes floatText {
