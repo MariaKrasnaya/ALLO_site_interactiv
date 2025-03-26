@@ -1,78 +1,70 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+  const originalTextContent =
+    "Сайт изучает методы шифрования центра профессиональной консультации через века «Алло, Гораций?». Помоги наладить связь с философами древности.";
+  const popupTextElement = document.querySelector(".popup_i-content p");
+  const informationElement = document.querySelector(".information");
+  const popupElement = document.getElementById("popup_info");
+  // Первый экран
 
-const originalTextContent = 'Сайт изучает методы шифрования центра профессиональной консультации через века «Алло, Гораций?». Помоги наладить связь с философами древности.';
-const popupTextElement = document.querySelector('.popup_i-content p');
-const informationElement = document.querySelector('.information');
-const popupElement = document.getElementById('popup_info');
-  // Первый экран 
-
-// Добавляем обработчик события клика на элемент с классом "information"
-informationElement.addEventListener('click', function () {
+  // Добавляем обработчик события клика на элемент с классом "information"
+  informationElement.addEventListener("click", function () {
     // Показываем всплывающее окно
-    popupElement.style.display = 'flex';
-});
+    popupElement.style.display = "flex";
+  });
 
-
-
-// Добавляем обработчик события клика по всей области окна
-window.addEventListener('click', function (event) {
+  // Добавляем обработчик события клика по всей области окна
+  window.addEventListener("click", function (event) {
     // Если пользователь кликнул вне содержимого окна, оно закроется
     if (event.target === popupElement) {
-        popupElement.style.display = 'none';
+      popupElement.style.display = "none";
     }
-});
+  });
 
-
-// Эффект печатания текста
-// Функция для печати текста по одной букве
-function printTextLetterByLetter(targetElement, fullText, typingSpeed = 25) {
-    let currentText = '';
+  // Эффект печатания текста
+  // Функция для печати текста по одной букве
+  function printTextLetterByLetter(targetElement, fullText, typingSpeed = 25) {
+    let currentText = "";
     let currentIndex = 0;
 
     const typingInterval = setInterval(function () {
-        currentText += fullText[currentIndex];
-        currentIndex++;
+      currentText += fullText[currentIndex];
+      currentIndex++;
 
-        targetElement.textContent = currentText;
+      targetElement.textContent = currentText;
 
-        if (currentIndex >= fullText.length) {
-            clearInterval(typingInterval);
-        }
+      if (currentIndex >= fullText.length) {
+        clearInterval(typingInterval);
+      }
     }, typingSpeed);
-}
+  }
 
-// Открываем всплывающее окно и запускаем печать текста при клике на элемент с классом "information"
-informationElement.addEventListener('click', function () {
-    popupElement.style.display = 'flex';
-    popupTextElement.textContent = '';// Очищаем текст перед началом печати
+  // Открываем всплывающее окно и запускаем печать текста при клике на элемент с классом "information"
+  informationElement.addEventListener("click", function () {
+    popupElement.style.display = "flex";
+    popupTextElement.textContent = ""; // Очищаем текст перед началом печати
     printTextLetterByLetter(popupTextElement, originalTextContent);
-});
+  });
 
-// Закрываем окно при клике за его пределами
-window.addEventListener('click', function (event) {
+  // Закрываем окно при клике за его пределами
+  window.addEventListener("click", function (event) {
     if (event.target === popupElement) {
-        popupElement.style.display = 'none';
+      popupElement.style.display = "none";
     }
-});
+  });
 
+  // второй экран
 
-
-
-
-
-// второй экран
-
-// Основной текст, который будет показываться после глитча
-const glitchText = `-Ах, юноша, ты, конечно,<br>
+  // Основной текст, который будет показываться после глитча
+  const glitchText = `-Ах, юноша, ты, конечно,<br>
 понимаешь, что эта твоя <br> виртуальная реальность – <br>
 лишь бледная тень идеального мира форм?<br>
 -Я живу в бочке, <br> а ты в квартире <br>с кондиционером. Кто из нас ближе к природе, интересно?`;
 
-// Получаем элемент, в который будет вставлен текст
-const textElement = document.getElementById("glitchText");
+  // Получаем элемент, в который будет вставлен текст
+  const textElement = document.getElementById("glitchText");
 
-// Функция, которая запускает глитч-эффект с волной и плавным исчезновением текста
-function startLongWaveGlitchEffect() {
+  // Функция, которая запускает глитч-эффект с волной и плавным исчезновением текста
+  function startLongWaveGlitchEffect() {
     const textArray = glitchText.split(""); // Превращаем текст в массив символов
     let currentPosition = 0; // Текущая позиция волны
     const glitchSpeed = 50; // Скорость глитча в миллисекундах
@@ -80,183 +72,355 @@ function startLongWaveGlitchEffect() {
 
     // Функция, которая выбирает случайный символ для глитча
     function getRandomGlitchSymbol() {
-        const glitchSymbols = ["■", "▓", "█", "0", "1"];
-        const randomIndex = Math.floor(Math.random() * glitchSymbols.length);
-        return glitchSymbols[randomIndex];
+      const glitchSymbols = ["■", "▓", "█", "0", "1"];
+      const randomIndex = Math.floor(Math.random() * glitchSymbols.length);
+      return glitchSymbols[randomIndex];
     }
 
     // Запускаем анимацию глитча
     const glitchInterval = setInterval(() => {
-        let glitchedText = ""; // Создаем пустую строку для нового текста
+      let glitchedText = ""; // Создаем пустую строку для нового текста
 
-        // Проходим по каждому символу текста
-        for (let i = 0; i < textArray.length; i++) {
-            // Если символ попадает в область волны, заменяем его случайным символом
-            if (i >= currentPosition && i < currentPosition + waveWidth && textArray[i] !== "<" && textArray[i] !== ">") {
-                glitchedText += getRandomGlitchSymbol();
-            } else {
-                glitchedText += textArray[i]; // Если нет — оставляем оригинальный символ
-            }
+      // Проходим по каждому символу текста
+      for (let i = 0; i < textArray.length; i++) {
+        // Если символ попадает в область волны, заменяем его случайным символом
+        if (
+          i >= currentPosition &&
+          i < currentPosition + waveWidth &&
+          textArray[i] !== "<" &&
+          textArray[i] !== ">"
+        ) {
+          glitchedText += getRandomGlitchSymbol();
+        } else {
+          glitchedText += textArray[i]; // Если нет — оставляем оригинальный символ
         }
+      }
 
-        // Обновляем текст на странице
-        textElement.innerHTML = glitchedText;
-        currentPosition++; // Сдвигаем волну вправо
+      // Обновляем текст на странице
+      textElement.innerHTML = glitchedText;
+      currentPosition++; // Сдвигаем волну вправо
 
-        // Останавливаем анимацию, когда волна проходит весь текст
-        if (currentPosition > textArray.length) {
-            clearInterval(glitchInterval);
-        }
+      // Останавливаем анимацию, когда волна проходит весь текст
+      if (currentPosition > textArray.length) {
+        clearInterval(glitchInterval);
+      }
     }, glitchSpeed);
-}
-// Запускаем глитч каждые 4 секунды
-setInterval(startLongWaveGlitchEffect, 4000);
+  }
+  // Запускаем глитч каждые 4 секунды
+  setInterval(startLongWaveGlitchEffect, 4000);
 
+  // Эффект пиксельной кисти на втором экране
+  // Получаем элемент экрана с классом .section2
+  const sectionElement = document.querySelector(".section2");
 
+  // Создаем холст для рисования пикселей
+  const canvasElement = document.createElement("canvas");
+  const canvasContext = canvasElement.getContext("2d");
+  sectionElement.appendChild(canvasElement);
 
-// Эффект пиксельной кисти на втором экране
-// Получаем элемент экрана с классом .section2
-const sectionElement = document.querySelector('.section2');
+  // Устанавливаем размеры холста равными размеру секции
+  canvasElement.width = sectionElement.clientWidth;
+  canvasElement.height = sectionElement.clientHeight;
+  canvasElement.style.position = "absolute";
+  canvasElement.style.top = "0";
+  canvasElement.style.left = "0";
 
-// Создаем холст для рисования пикселей
-const canvasElement = document.createElement('canvas');
-const canvasContext = canvasElement.getContext('2d');
-sectionElement.appendChild(canvasElement);
+  // Переменная, отвечающая за активность рисования
+  let isDrawingActive = false;
 
-// Устанавливаем размеры холста равными размеру секции
-canvasElement.width = sectionElement.clientWidth;
-canvasElement.height = sectionElement.clientHeight;
-canvasElement.style.position = 'absolute';
-canvasElement.style.top = '0';
-canvasElement.style.left = '0';
+  // Параметры кисти для пиксельного эффекта
+  const brushSize = 70; // Размер кисти
+  const pixelSize = 10; // Размер отдельного пикселя
+  const brushColor = "#0051FF"; // Цвет пикселей
 
-// Переменная, отвечающая за активность рисования
-let isDrawingActive = false;
-
-// Параметры кисти для пиксельного эффекта
-const brushSize = 70; // Размер кисти
-const pixelSize = 10; // Размер отдельного пикселя
-const brushColor = '#0051FF'; // Цвет пикселей
-
-// Функция, которая рисует пиксельную кисть
-function drawPixelBrush(mouseX, mouseY) {
+  // Функция, которая рисует пиксельную кисть
+  function drawPixelBrush(mouseX, mouseY) {
     canvasContext.fillStyle = brushColor;
     for (let offsetX = 0; offsetX < brushSize; offsetX += pixelSize) {
-        for (let offsetY = 0; offsetY < brushSize; offsetY += pixelSize) {
-            canvasContext.fillRect(
-                mouseX + offsetX - brushSize / 2,
-                mouseY + offsetY - brushSize / 2,
-                pixelSize,
-                pixelSize
-            );
-        }
+      for (let offsetY = 0; offsetY < brushSize; offsetY += pixelSize) {
+        canvasContext.fillRect(
+          mouseX + offsetX - brushSize / 2,
+          mouseY + offsetY - brushSize / 2,
+          pixelSize,
+          pixelSize
+        );
+      }
     }
-}
+  }
 
-// Слушаем нажатие левой кнопки мыши и активируем рисование
-sectionElement.addEventListener('mousedown', (event) => {
-    if (event.button === 0) { // 0 — это левая кнопка
-        isDrawingActive = true;
+  // Слушаем нажатие левой кнопки мыши и активируем рисование
+  sectionElement.addEventListener("mousedown", (event) => {
+    if (event.button === 0) {
+      // 0 — это левая кнопка
+      isDrawingActive = true;
     }
-});
+  });
 
-// Слушаем отпускание кнопки мыши и отключаем рисование
-document.addEventListener('mouseup', () => {
+  // Слушаем отпускание кнопки мыши и отключаем рисование
+  document.addEventListener("mouseup", () => {
     isDrawingActive = false;
-});
+  });
 
-// Слушаем движение мыши и рисуем пикселями, если кнопка зажата
-sectionElement.addEventListener('mousemove', (event) => {
+  // Слушаем движение мыши и рисуем пикселями, если кнопка зажата
+  sectionElement.addEventListener("mousemove", (event) => {
     if (isDrawingActive) {
-        drawPixelBrush(event.offsetX, event.offsetY);
+      drawPixelBrush(event.offsetX, event.offsetY);
     }
-});
+  });
 
-// Сбрасываем рисование, если мышь уходит с экрана
-sectionElement.addEventListener('mouseleave', () => {
+  // Сбрасываем рисование, если мышь уходит с экрана
+  sectionElement.addEventListener("mouseleave", () => {
     isDrawingActive = false;
-});
+  });
 
- 
-// экран третий
-// Получаем элементы с экрана
-const sectionThree = document.querySelector('.section3');
-const bluePanel = document.querySelector('.blue-panel');
-const inputField = document.getElementById('userInput');
-const encryptButton = document.getElementById('encryptButton');
+  // экран третий
+  // Получаем элементы с экрана
+  const sectionThree = document.querySelector(".section3");
+  const bluePanel = document.querySelector(".blue-panel");
+  const inputField = document.getElementById("userInput");
+  const encryptButton = document.getElementById("encryptButton");
 
-// Нажатие на кнопку "ЗАШИФРОВАТЬ"
-encryptButton.addEventListener('click', function () {
+  // Функция для создания эффекта глитча
+  function glitchEffect(text) {
+    const glitchChars = ["#", "%", "&", "@", "£", "¥", "§", "¤", "▓", "█"];
+    return text
+      .split("")
+      .map((char) =>
+        Math.random() < 0.2
+          ? glitchChars[Math.floor(Math.random() * glitchChars.length)]
+          : char
+      )
+      .join("");
+  }
+
+  // Нажатие на кнопку "ЗАШИФРОВАТЬ"
+  encryptButton.addEventListener("click", function () {
     const userText = inputField.value.trim();
 
     // Проверяем, что поле не пустое
     if (userText !== "") {
-        // Скрываем синюю плашку плавно
-        bluePanel.style.transition = 'opacity 0.5s ease';
-        bluePanel.style.opacity = '0';
+      // Скрываем синюю плашку плавно
+      bluePanel.style.transition = "opacity 0.5s ease";
+      bluePanel.style.opacity = "0";
 
-        setTimeout(function () {
-            // Полностью скрываем плашку
-            bluePanel.style.display = 'none';
+      setTimeout(() => {
+        // Полностью скрываем плашку
+        bluePanel.style.display = "none";
 
-            // Создаем новый элемент с плывущим текстом
-            const floatingTextElement = document.createElement('div');
-            floatingTextElement.classList.add('floating-text');
-            floatingTextElement.textContent = userText;
+        // Создаем новый элемент с плывущим текстом
+        const floatingTextElement = document.createElement("div");
+        floatingTextElement.classList.add("floating-text");
+        floatingTextElement.textContent = userText;
 
-            // Добавляем текст в секцию section3
-            sectionThree.appendChild(floatingTextElement);
+        // Добавляем текст в секцию section3
+        sectionThree.appendChild(floatingTextElement);
 
-            // Задаем начальную позицию текста ВНУТРИ section3
-            floatingTextElement.style.position = 'absolute';
-            floatingTextElement.style.top = '50%'; // По центру вертикали section3
-            floatingTextElement.style.left = '0'; // Начинает с левой границы section3
-            floatingTextElement.style.transform = 'translateY(-50%)'; // Точный вертикальный центр
+        // Задаем начальную позицию текста
+        floatingTextElement.style.position = "absolute";
+        floatingTextElement.style.top = "50%";
+        floatingTextElement.style.left = "-100%";
+        floatingTextElement.style.transform = "translateY(-50%)";
 
-            // Движение текста
-            let position = 0;
-            const speed = 2;
+        // Движение текста + эффект глитча
+        let position = -floatingTextElement.clientWidth;
+        const speed = 5; // Ускорим текст
 
-            function moveText() {
-                position += speed;
-                floatingTextElement.style.left = position + 'px';
+        function moveText() {
+          position += speed;
+          floatingTextElement.style.left = `${position}px`;
 
-                // Сбрасываем текст, когда он выходит за границу section3
-                if (position > sectionThree.clientWidth) {
-                    position = -floatingTextElement.clientWidth;
-                }
+          // Добавляем "глитч" по пути
+          if (Math.random() < 0.1) {
+            floatingTextElement.textContent = glitchEffect(userText);
+          }
 
-                requestAnimationFrame(moveText);
-            }
+          // Когда текст ушел за экран
+          if (position > sectionThree.clientWidth) {
+            // Убираем текст плавно
+            floatingTextElement.style.transition = "opacity 1s ease";
+            floatingTextElement.style.opacity = "0";
 
-            // Запускаем анимацию текста
-            moveText();
+            // Удаляем текст и возвращаем плашку через 2 секунды
+            setTimeout(() => {
+              floatingTextElement.remove();
 
-            // Плавно показываем текст
-            setTimeout(function () {
-                floatingTextElement.style.opacity = '1';
-            }, 100);
+              bluePanel.style.display = "block";
+              bluePanel.style.transition = "opacity 0.5s ease";
+              bluePanel.style.opacity = "1";
 
-        }, 500);
+              // Очищаем поле ввода
+              inputField.value = "";
+            }, 2000);
+          } else {
+            requestAnimationFrame(moveText);
+          }
+        }
+
+        moveText();
+
+        // Плавно показываем текст
+        setTimeout(() => {
+          floatingTextElement.style.opacity = "1";
+        }, 100);
+      }, 500);
     } else {
-        alert("Пожалуйста, введите текст перед шифрованием!");
+      alert("Пожалуйста, введите текст перед шифрованием!");
     }
-});
+  });
 
+  // // Создаем элемент шумного телевизора
+  // function createNoiseEffect() {
+  //   let noiseCanvas = document.querySelector('.noise-effect');
+  //   if (!noiseCanvas) {
+  //       noiseCanvas = document.createElement('canvas');
+  //       noiseCanvas.classList.add('noise-effect');
+  //       sectionThree.appendChild(noiseCanvas);
+  //   }
 
+  //   const ctx = noiseCanvas.getContext('2d');
+  //   noiseCanvas.width = sectionThree.clientWidth;
+  //   noiseCanvas.height = sectionThree.clientHeight;
 
+  //   // Рисуем шум
+  //   function drawNoise() {
+  //       const imageData = ctx.createImageData(noiseCanvas.width, noiseCanvas.height);
+  //       const buffer = new Uint32Array(imageData.data.buffer);
 
+  //       for (let i = 0; i < buffer.length; i++) {
+  //           // Синий шум (редкий) и белый шум (чаще)
+  //           if (Math.random() < 0.03) {
+  //               buffer[i] = 0xFF0051FF; // Синий пиксель
+  //           } else if (Math.random() < 0.1) {
+  //               buffer[i] = 0xFFFFFFFF; // Белый пиксель
+  //           }
+  //       }
 
+  //       ctx.putImageData(imageData, 0, 0);
+  //       requestAnimationFrame(drawNoise);
+  //   }
 
+  //   drawNoise();
+  //   noiseCanvas.style.opacity = '1';
 
+  //   return noiseCanvas;
+  // }
 
+  // // Подключаем эффект к кнопке шифрования
+  // encryptButton.addEventListener('click', () => {
+  //   const userText = inputField.value.trim();
+  //   if (userText !== "") {
+  //       const noiseCanvas = createNoiseEffect();
 
+  //       // Плавное исчезновение шума вместе с текстом
+  //       setTimeout(() => {
+  //           noiseCanvas.style.transition = 'opacity 1s ease';
+  //           noiseCanvas.style.opacity = '0';
 
+  //           // Полное удаление элемента после исчезновения
+  //           setTimeout(() => noiseCanvas.remove(), 1000);
+  //       }, 5000);
+  //   }
+  // });
 
+  // четвертый экран
+  // Получаем элемент секции с классом section4
+  const section4 = document.querySelector(".section4");
 
+  // Счётчик кликов
+  let clickCount = 0;
 
+  // Максимальное количество кликов для синего экрана и сброса
+  const maxClicks = 8;
 
+  // Функция для создания и добавления блока в секцию
+  function createBlock(colorClass, isHorizontal = false) {
+    const block = document.createElement("div");
+    block.classList.add("block");
 
+    // Добавляем класс цвета
+    if (colorClass) block.classList.add(colorClass);
 
+    // Генерируем случайные размеры и позицию
+    const blockWidth = Math.random() * (7 - 0.3) + 0.3 + "vw";
+    const blockHeight = section4.clientHeight + "px";
+    const blockLeft = Math.random() * 100 + "vw";
 
+    if (isHorizontal) {
+      block.style.width = section4.clientWidth + "px";
+      block.style.height = Math.random() * (3 - 1) + 1 + "vw";
+      block.style.left = "0";
+      block.style.top = Math.random() * 56 + "vw";
+    } else {
+      block.style.width = blockWidth;
+      block.style.height = blockHeight;
+      block.style.left = blockLeft;
+      block.style.top = "0";
+    }
+
+    // Добавляем блок в секцию
+    section4.appendChild(block);
+  }
+
+  // Функция для хаотичного движения блоков при "синем экране смерти"
+  function createChaosBlock() {
+    const chaosBlock = document.createElement("div");
+    chaosBlock.classList.add("chaosBlock");
+
+    // Рандомный размер и цвет блока
+    chaosBlock.style.width = Math.random() * (4 - 1) + 1 + "vw";
+    chaosBlock.style.height = Math.random() * (4 - 1) + 1 + "vw";
+    chaosBlock.style.left = Math.random() * 100 + "vw";
+    chaosBlock.style.top = Math.random() * 56 + "vw";
+
+    section4.appendChild(chaosBlock);
+
+    // Движение блока хаотично
+    const moveInterval = setInterval(() => {
+      chaosBlock.style.left = Math.random() * 100 + "vw";
+      chaosBlock.style.top = Math.random() * 56 + "vw";
+    }, 500);
+
+    // Убираем блоки при сбросе
+    if (clickCount >= maxClicks) clearInterval(moveInterval);
+  }
+
+  // Сброс всего к начальному состоянию с сохранением стилей
+  function resetScreen() {
+    clickCount = 0;
+
+    // Очищаем блоки, но оставляем текстовый контейнер
+    section4.innerHTML = `<div class="text-container"><p>О мудрый и взыскательный друг мой!...</p></div>`;
+    section4.classList.remove("blueScreen");
+  }
+
+  // Добавляем слушатель событий на клик по секции
+  section4.addEventListener("click", function () {
+    clickCount++;
+
+    // Синие и красные блоки до 7 кликов
+    if (clickCount <= 7) {
+      let newBlocks = clickCount * 5;
+      for (let i = 0; i < newBlocks; i++) {
+        createBlock("blue");
+      }
+      if (clickCount >= 2) {
+        for (let i = 0; i < clickCount * 2; i++) {
+          createBlock("red", true);
+        }
+      }
+    }
+
+    // Синий экран смерти на 7-й клик
+    if (clickCount === 7) {
+      section4.classList.add("blueScreen");
+      for (let i = 0; i < 20; i++) {
+        createChaosBlock();
+      }
+    }
+
+    // Сброс на 10-й клик
+    if (clickCount === 10) {
+      resetScreen();
+    }
+  });
 });

@@ -1,109 +1,135 @@
-*{ box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
 @font-face {
-font-family: "FliegeMono";
-src: url("../fonts/FliegeMonoVF.woff2") format("woff");
-font-style: Light;
-font-weight: Light;
+  font-family: "FliegeMono";
+  src: url("../fonts/FliegeMonoVF.woff2") format("woff");
+  font-style: Light;
+  font-weight: Light;
 }
 
 .section1 {
-width: 100vw;
-height: 56vw;
+  width: 100vw;
+  height: 56vw;
 }
 
 .columns_all {
-display: flex;
-flex-direction: row;
-width: 100vw;
-height: 100vw;
-flex-wrap: nowrap;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vw;
+  flex-wrap: nowrap;
+  cursor: pointer;
 }
 
 .column {
-width: 20vw;
-height: 56vw;
+  width: 20vw;
+  height: 56vw;
 }
 
-.n1{
+.n1 {
   background-image: url(../images/Column_1.png);
   background-size: 100% auto;
 }
 
-.n2{
+.n2 {
   background-image: url(../images/Column_2.svg);
   background-size: 100% auto;
 }
 
-.n3{
+.n3 {
   background-image: url(../images/Column_3.png);
   background-size: 100% auto;
 }
 
-.n4{
+.n4 {
   background-image: url(../images/Column_4.svg);
   background-size: 100% auto;
 }
 
-.n5{
+.n5 {
   background-image: url(../images/Column_5.svg);
   background-size: 100% auto;
 }
 
 .number {
-width: 100%;
-display: flex;
-flex-direction: row;
-position: absolute;
-color: white;
-font-family: "FliegeMono";
-font-weight: 400;
-font-size: 3vw;
-margin-left: 9%;
-margin-top: 51vw;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  color: white;
+  font-family: "FliegeMono";
+  font-weight: 400;
+  font-size: 3vw;
+  margin-left: 9%;
+  margin-top: 51vw;
 }
 
 .numbers {
-width: 20vw;
-justify-content: center;
-animation: numbers 2s ease-in-out infinite;
-animation-play-state: running;
-cursor: pointer;
+  width: 20vw;
+  justify-content: center;
+  animation: numbers 2s ease-in-out infinite;
+  animation-play-state: running;
+  cursor: pointer;
 }
 
 @keyframes numbers {
-  0% {color: white;}
-  50% {color: #FA4A22;}
-  100% {color: white;}
-
+  0% {
+    color: white;
+  }
+  50% {
+    color: #fa4a22;
+  }
+  100% {
+    color: white;
+  }
 }
 
 .numbers:hover {
-animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 .information {
-position: absolute;
-margin-left: 93vw;
-margin-top: -100vw;
-display: flex;
-justify-content: center;
-align-items: center;
-width: 7vw;
-height: 7.2vw;
-background-color: black;
-cursor: pointer;
+  position: absolute;
+  margin-left: 93vw;
+  margin-top: -100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7vw;
+  height: 7.2vw;
+  background-color: black;
+  cursor: pointer;
+  animation: pulse 2s ease-in-out infinite;
+  animation-play-state: running;
 }
 
-.information p{
-color: #FA4A22;
-font-family: "FliegeMono";
-font-weight: 400;
-font-size: 6vw;
+.information:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.information p {
+  color: #fa4a22;
+  font-family: "FliegeMono";
+  font-weight: 400;
+  font-size: 6vw;
 }
 
 .information p:hover {
-color: white;
+  color: white;
 }
 
 /* Стили для всплывающего окна */
@@ -141,48 +167,44 @@ color: white;
   line-height: 1.5vw;
 }
 
-
 /* второй экран */
 .section2 {
-position: relative;
-width: 100vw;
-height: 100vh;
-background-color: black;
-overflow: hidden;
-cursor: url('../images/cursor_sec_2.png'), auto;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+  cursor: url("../images/cursor_sec_2.png"), auto;
 }
-.glitchText{
-color: #0051FF;
-font-family: "FliegeMono";
-font-weight: 400;
-font-size: 6vw;
-user-select: none; /* Запрещаем выделение текста */
-transition: all 0.5s ease-in-out;
-hyphens: auto; /* Автоматический перенос по слогам */
-word-break: break-word; /* Перенос длинных слов */
+.glitchText {
+  color: #0051ff;
+  font-family: "FliegeMono";
+  font-weight: 400;
+  font-size: 6vw;
+  user-select: none; /* Запрещаем выделение текста */
+  transition: all 0.5s ease-in-out;
+  hyphens: auto; /* Автоматический перенос по слогам */
+  word-break: break-word; /* Перенос длинных слов */
 }
 
 /* Зададим свой стиль курсору */
 .section2.active {
-  cursor: url('../images/cursor_sec_2.png') 16 16, auto; /* 16 16 — координаты точки клика */
+  cursor: url("../images/cursor_sec_2.png") 16 16, auto; /* 16 16 — координаты точки клика */
 }
 
-
-
-
 .section3 {
-display: flex;
-width: 100vw;
-height: 56vw;
-background-color: #FA4A22;
-justify-content: center;
-align-items: center;
-position: relative;
-overflow: hidden;
+  display: flex;
+  width: 100vw;
+  height: 56vw;
+  background-color: #fa4a22;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .blue-panel {
-  background-color: #0051FF;
+  background-color: #0051ff;
   padding: 2vw;
   width: 60%;
   height: auto;
@@ -205,65 +227,183 @@ overflow: hidden;
 .dot {
   width: 1vw;
   height: 1vw;
-  background-color: #FA4A22;
+  background-color: #fa4a22;
   border-radius: 50%;
 }
 
 h2 {
-  color: #FA4A22;
-  font-family: 'FliegeMono', monospace;
+  color: #fa4a22;
+  font-family: "FliegeMono", monospace;
   margin-bottom: 2vw;
 }
 
 input {
   width: 80%;
   padding: 1.5vw;
-  border-color: #FA4A22;
+  border-color: #fa4a22;
   border-width: 0.4vw;
   border-radius: 0.5vw;
   margin-bottom: 15px;
   font-size: 16px;
   text-align: center;
-  background-color: #0051FF;
+  background-color: #0051ff;
 }
 
 button {
-  background-color: #FA4A22;
-  color: #0051FF;
+  background-color: #fa4a22;
+  color: #0051ff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  font-family: 'FliegeMono', monospace;
+  font-family: "FliegeMono", monospace;
   transition: 0.3s ease;
 }
 
 button:hover {
-  background-color: #FF6A4A;
+  background-color: #ff6a4a;
 }
 
 .floating-text {
   position: absolute;
-  color: #ffffff;
-  font-family: 'FliegeMono', monospace;
-  font-size: 24px;
+  color: #0051ff;
+  font-family: "FliegeMono", monospace;
+  font-size: 7vw;
   white-space: nowrap;
   opacity: 0;
-  animation: floatText 1s ease-in-out infinite;
+  filter: drop-shadow(0 0 0.5vw rgba(255, 255, 255, 0.8));
+  animation: glitchMove 0.1s infinite alternate;
 }
 
-@keyframes floatText {
+/* Эффект глитча */
+@keyframes glitchMove {
   0% {
-    transform: translateX(100%);
+    transform: translateY(-50%) translateX(0);
+  }
+  100% {
+    transform: translateY(-48%) translateX(1px);
+  }
+}
+
+/* Эффект шумного телефизора
+.noise-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: screen; /* Дает эффект "свечения" синего шума
+  transition: opacity 0.5s ease;
+}  */
+
+.section4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 56vw;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-container {
+  max-width: 80%;
+  color: #0051ff;
+  font-family: "FliegeMono", monospace;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  line-height: 2vw;
+  text-align: center;
+  z-index: 1;
+  cursor: pointer;
+  user-select: none;
+  text-transform: uppercase;
+  animation: go 2s ease-in-out infinite;
+}
+
+@keyframes go {
+  0% {
+    margin-top: 0vw;
+    opacity: 0%;
+  }
+  2% {
+    opacity: 100%;
+  }
+  21% {
+    opacity: 100%;
+  }
+  25% {
+    opacity: 0%;
+  }
+  26% {
+    opacity: 100%;
+  }
+  50% {
+    margin-top: 40vw;
+    opacity: 0%;
+  }
+  100% {
+    margin-top: 0vw;
+  }
+}
+
+/* Синий экран смерти */
+.blueScreen {
+  background-color: #0051ff;
+  color: #fa4a22;
+}
+
+/* Стили обычных блоков */
+.block {
+  position: absolute;
+  background-color: #0051ff;
+}
+
+/* Красные горизонтальные блоки */
+.red {
+  background-color: #fa4a22;
+}
+
+/* Блоки хаоса при синем экране смерти */
+.chaosBlock {
+  position: absolute;
+  background-color: #0051ff;
+  animation: glitchMove 0.6s infinite alternate ease-in-out;
+}
+
+/* Движение блоков хаоса */
+@keyframes glitchMove {
+  0% {
+    transform: translate(-5vw, -5vw);
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(7);
+  }
+  100% {
+    transform: translate(5vw, 5vw);
+    transform: scale(1);
+  }
+}
+
+/* Анимация для синего экрана */
+@keyframes flicker {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
     opacity: 1;
   }
   100% {
-    transform: translateX(-100%);
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
-
-
-
+.blueScreen {
+  animation: flicker 0.2s infinite;
+}
