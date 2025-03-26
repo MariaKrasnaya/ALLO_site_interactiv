@@ -373,22 +373,6 @@ button:hover {
 .chaosBlock {
   position: absolute;
   background-color: #0051ff;
-  animation: glitchMove 0.6s infinite alternate ease-in-out;
-}
-
-/* Движение блоков хаоса */
-@keyframes glitchMove {
-  0% {
-    transform: translate(-5vw, -5vw);
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(7);
-  }
-  100% {
-    transform: translate(5vw, 5vw);
-    transform: scale(1);
-  }
 }
 
 /* Анимация для синего экрана */
@@ -406,4 +390,78 @@ button:hover {
 
 .blueScreen {
   animation: flicker 0.2s infinite;
+}
+
+/* пятый экран */
+.section5 {
+  width: 100vw;
+  height: 56vw;
+  background-color: #0051ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+/* Двоичный код по центру */
+.binary-display {
+  color: #fa4a22;
+  font-family: "FliegeMono", monospace;
+  font-size: 2vw;
+  text-align: justify;
+  margin-bottom: auto;
+  margin-top: 3vw;
+  width: 80vw;
+  user-select: none;
+  line-height: 3.5vw;
+  overflow-wrap: break-word;
+}
+
+/* Черный блок снизу */
+.binary-container {
+  width: 80vw;
+  height: 10vw;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  padding: 0 1vw;
+}
+
+/* Вертикальные разделительные линии */
+.binary-container::before,
+.binary-container::after {
+  content: "";
+  width: 0.3vw;
+  height: 10vw;
+  background-color: #fa4a22;
+  position: absolute;
+  bottom: 0;
+}
+
+.binary-container::before {
+  left: 0;
+}
+
+.binary-container::after {
+  right: 0;
+}
+
+/* Слоты с двоичными блоками */
+.binary-slot {
+  color: #fa4a22;
+  font-family: "FliegeMono", monospace;
+  font-size: 2vw;
+  padding: 0.5vw;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.binary-slot:hover{
+transform: scale(1.5);
+color: #0051ff;
 }

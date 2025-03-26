@@ -423,4 +423,59 @@ document.addEventListener("DOMContentLoaded", () => {
       resetScreen();
     }
   });
+
+  // пятый экран
+ // Получаем элементы
+const slots = document.querySelectorAll('.binary-slot');
+const binaryDisplay = document.querySelector('.binary-display');
+let originalText = binaryDisplay.innerHTML;
+
+// Функция для обработки клика по слотам
+slots.forEach((slot) => {
+  slot.addEventListener('click', () => {
+    // Добавляем текст слота к binary-display
+    binaryDisplay.innerHTML += slot.innerText;
+    // Скрываем слот
+    slot.style.display = 'none';
+
+    // Проверяем, все ли слоты скрыты
+    const allHidden = [...slots].every((s) => s.style.display === 'none');
+    if (allHidden) {
+      startBinaryAnimation();
+    }
+  });
+});
+
+// Функция запуска анимации двоичного кода
+function startBinaryAnimation() {
+  let letters = 'Хорошая работа, юный гений! Гораций одобряет твою работу';
+  let currentIndex = 0;
+  binaryDisplay.innerHTML = '';
+
+  const interval = setInterval(() => {
+    binaryDisplay.innerHTML += letters[currentIndex];
+    currentIndex++;
+
+    if (currentIndex >= letters.length) {
+      clearInterval(interval);
+      setTimeout(resetDisplay, 2000); // Возвращаем всё обратно через 2 секунды
+    }
+  }, 70);
+} 
+
+// Сброс текста и слотов к исходному состоянию
+function resetDisplay() {
+  binaryDisplay.innerHTML = originalText;
+  slots.forEach((slot) => {
+    slot.style.display = 'block';
+  });
+}
+
+// Сброс текста при перезагрузке
+window.addEventListener('load', () => {
+  binaryDisplay.innerHTML = originalText;
+});
+ 
+
+
 });
