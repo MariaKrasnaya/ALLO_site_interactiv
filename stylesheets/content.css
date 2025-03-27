@@ -569,7 +569,7 @@ button:hover {
 .chess-pattern {
   background: repeating-linear-gradient(
       0deg,
-      black 0%,
+      black 50%,
       black 50%,
       #fa4a22 50%,
       #fa4a22 100%
@@ -582,4 +582,17 @@ button:hover {
       #fa4a22 100%
     );
   background-size: 10vw 10vw;
+  animation: mig 2s ease-in-out infinite;
+}
+
+@keyframes mig {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }

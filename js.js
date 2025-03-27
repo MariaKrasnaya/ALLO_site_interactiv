@@ -5,7 +5,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const informationElement = document.querySelector(".information");
   const popupElement = document.getElementById("popup_info");
   // Первый экран
+  // Получаем все элементы навигации
+  const navigationElements = document.querySelectorAll(
+    ".n1, .n2, .n3, .n4, .n5"
+  );
 
+  // Соответствие кнопок и секций
+  const sectionMapping = {
+    n1: ".section2",
+    n2: ".section3",
+    n3: ".section4",
+    n4: ".section5",
+    n5: ".section6",
+  };
+
+  // Добавляем обработчики событий для каждой навигационной кнопки
+  navigationElements.forEach((navigationElement) => {
+    navigationElement.addEventListener("click", function () {
+      const sectionClass = sectionMapping[this.classList[1]]; // Получаем нужную секцию
+      const targetSection = document.querySelector(sectionClass);
+
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
   // Добавляем обработчик события клика на элемент с классом "information"
   informationElement.addEventListener("click", function () {
     // Показываем всплывающее окно
