@@ -1,0 +1,37 @@
+<svg width="642" height="795" viewBox="0 0 642 795" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="6.25033" y="273.336" width="311.624" height="253.585" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<rect x="6.25" y="6.35742" width="628.605" height="782.185" rx="5.35743" stroke="#FA4A22" stroke-width="12.5007"/>
+<mask id="path-3-inside-1_275_19" fill="white">
+<path d="M311.623 520.67H641.105V789.434C641.105 792.393 638.706 794.792 635.748 794.792H311.623V520.67Z"/>
+</mask>
+<path d="M311.623 520.67H641.105V789.434C641.105 792.393 638.706 794.792 635.748 794.792H311.623V520.67Z" stroke="#FA4A22" stroke-width="25.0013" mask="url(#path-3-inside-1_275_19)"/>
+<circle cx="376.806" cy="585.853" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="441.988" cy="585.853" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="507.169" cy="585.853" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="572.353" cy="585.853" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="64.2904" cy="585.853" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="129.472" cy="585.853" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="194.654" cy="585.853" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="259.837" cy="585.853" r="20.5368" fill="#0051FF" stroke="#0051FF" stroke-width="12.5007"/>
+<circle cx="376.806" cy="657.285" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="441.988" cy="657.285" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="507.169" cy="657.285" r="20.5368" fill="#0051FF" stroke="#0051FF" stroke-width="12.5007"/>
+<circle cx="572.353" cy="657.285" r="20.5368" fill="#0051FF" stroke="#0051FF" stroke-width="12.5007"/>
+<circle cx="64.2904" cy="657.285" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="129.472" cy="657.285" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="194.654" cy="657.285" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="259.837" cy="657.285" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="376.806" cy="728.718" r="20.5368" fill="#0051FF" stroke="#0051FF" stroke-width="12.5007"/>
+<circle cx="441.988" cy="728.718" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="507.169" cy="728.718" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="572.353" cy="728.718" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="64.2904" cy="728.718" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="129.472" cy="728.718" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<circle cx="194.654" cy="728.718" r="20.5368" fill="#0051FF" stroke="#0051FF" stroke-width="12.5007"/>
+<circle cx="259.837" cy="728.718" r="20.5368" fill="#0051FF" stroke="#FA4A22" stroke-width="12.5007"/>
+<rect x="317.873" y="12.6078" width="310.731" height="260.728" fill="#FA4A22" stroke="#FA4A22" stroke-width="12.5007"/>
+<ellipse cx="162.063" cy="139.846" rx="95.0944" ry="94.2015" fill="#0051FF"/>
+<ellipse cx="476.364" cy="133.596" rx="95.0944" ry="94.2015" fill="#0051FF"/>
+<ellipse cx="162.063" cy="399.682" rx="95.0944" ry="94.2015" fill="#FA4A22"/>
+<ellipse cx="476.364" cy="399.682" rx="95.0944" ry="94.2015" fill="#FA4A22"/>
+</svg>

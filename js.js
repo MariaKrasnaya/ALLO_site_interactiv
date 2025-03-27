@@ -268,60 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // // Создаем элемент шумного телевизора
-  // function createNoiseEffect() {
-  //   let noiseCanvas = document.querySelector('.noise-effect');
-  //   if (!noiseCanvas) {
-  //       noiseCanvas = document.createElement('canvas');
-  //       noiseCanvas.classList.add('noise-effect');
-  //       sectionThree.appendChild(noiseCanvas);
-  //   }
-
-  //   const ctx = noiseCanvas.getContext('2d');
-  //   noiseCanvas.width = sectionThree.clientWidth;
-  //   noiseCanvas.height = sectionThree.clientHeight;
-
-  //   // Рисуем шум
-  //   function drawNoise() {
-  //       const imageData = ctx.createImageData(noiseCanvas.width, noiseCanvas.height);
-  //       const buffer = new Uint32Array(imageData.data.buffer);
-
-  //       for (let i = 0; i < buffer.length; i++) {
-  //           // Синий шум (редкий) и белый шум (чаще)
-  //           if (Math.random() < 0.03) {
-  //               buffer[i] = 0xFF0051FF; // Синий пиксель
-  //           } else if (Math.random() < 0.1) {
-  //               buffer[i] = 0xFFFFFFFF; // Белый пиксель
-  //           }
-  //       }
-
-  //       ctx.putImageData(imageData, 0, 0);
-  //       requestAnimationFrame(drawNoise);
-  //   }
-
-  //   drawNoise();
-  //   noiseCanvas.style.opacity = '1';
-
-  //   return noiseCanvas;
-  // }
-
-  // // Подключаем эффект к кнопке шифрования
-  // encryptButton.addEventListener('click', () => {
-  //   const userText = inputField.value.trim();
-  //   if (userText !== "") {
-  //       const noiseCanvas = createNoiseEffect();
-
-  //       // Плавное исчезновение шума вместе с текстом
-  //       setTimeout(() => {
-  //           noiseCanvas.style.transition = 'opacity 1s ease';
-  //           noiseCanvas.style.opacity = '0';
-
-  //           // Полное удаление элемента после исчезновения
-  //           setTimeout(() => noiseCanvas.remove(), 1000);
-  //       }, 5000);
-  //   }
-  // });
-
   // четвертый экран
   // Получаем элемент секции с классом section4
   const section4 = document.querySelector(".section4");
@@ -425,57 +371,130 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // пятый экран
- // Получаем элементы
-const slots = document.querySelectorAll('.binary-slot');
-const binaryDisplay = document.querySelector('.binary-display');
-let originalText = binaryDisplay.innerHTML;
+  // Получаем элементы
+  const slots = document.querySelectorAll(".binary-slot");
+  const binaryDisplay = document.querySelector(".binary-display");
+  let originalText = binaryDisplay.innerHTML;
 
-// Функция для обработки клика по слотам
-slots.forEach((slot) => {
-  slot.addEventListener('click', () => {
-    // Добавляем текст слота к binary-display
-    binaryDisplay.innerHTML += slot.innerText;
-    // Скрываем слот
-    slot.style.display = 'none';
+  const infoElement = document.querySelector(".info_sec5");
+  const bubbleElement = document.querySelector(".info-bubble");
+  const typingTextElement = document.querySelector(".typing-text");
+  const textToType =
+    "Нажми на элементы, чтобы дополнить двоичный код шифрования";
+  let characterIndex = 0;
 
-    // Проверяем, все ли слоты скрыты
-    const allHidden = [...slots].every((s) => s.style.display === 'none');
-    if (allHidden) {
-      startBinaryAnimation();
+  function showBubbleWithTypingEffect() {
+    bubbleElement.classList.remove("hidden");
+    bubbleElement.style.visibility = "visible";
+    bubbleElement.style.opacity = "1";
+    typingTextElement.textContent = "";
+    characterIndex = 0;
+
+    function typeCharacter() {
+      if (characterIndex < textToType.length) {
+        typingTextElement.textContent += textToType[characterIndex];
+        characterIndex++;
+        setTimeout(typeCharacter, 50);
+      }
+    }
+
+    typeCharacter();
+  }
+
+  function hideBubble() {
+    bubbleElement.classList.add("hidden");
+    bubbleElement.style.visibility = "hidden";
+    bubbleElement.style.opacity = "0";
+  }
+
+  infoElement.addEventListener("click", function (event) {
+    event.stopPropagation(); // Чтобы клик на info_sec5 не закрыл бабл сразу же
+    if (bubbleElement.classList.contains("hidden")) {
+      showBubbleWithTypingEffect();
     }
   });
-});
 
-// Функция запуска анимации двоичного кода
-function startBinaryAnimation() {
-  let letters = 'Хорошая работа, юный гений! Гораций одобряет твою работу';
-  let currentIndex = 0;
-  binaryDisplay.innerHTML = '';
-
-  const interval = setInterval(() => {
-    binaryDisplay.innerHTML += letters[currentIndex];
-    currentIndex++;
-
-    if (currentIndex >= letters.length) {
-      clearInterval(interval);
-      setTimeout(resetDisplay, 2000); // Возвращаем всё обратно через 2 секунды
+  // Закрытие бабла при клике в любое место экрана, кроме info_sec5 и самого бабла
+  document.addEventListener("click", function (event) {
+    if (
+      !bubbleElement.contains(event.target) &&
+      !infoElement.contains(event.target)
+    ) {
+      hideBubble();
     }
-  }, 70);
-} 
+  });
 
-// Сброс текста и слотов к исходному состоянию
-function resetDisplay() {
-  binaryDisplay.innerHTML = originalText;
+  // Функция для обработки клика по слотам
   slots.forEach((slot) => {
-    slot.style.display = 'block';
+    slot.addEventListener("click", () => {
+      // Добавляем текст слота к binary-display
+      binaryDisplay.innerHTML += slot.innerText;
+      // Скрываем слот
+      slot.style.display = "none";
+
+      // Проверяем, все ли слоты скрыты
+      const allHidden = [...slots].every((s) => s.style.display === "none");
+      if (allHidden) {
+        startBinaryAnimation();
+      }
+    });
   });
-}
 
-// Сброс текста при перезагрузке
-window.addEventListener('load', () => {
-  binaryDisplay.innerHTML = originalText;
-});
- 
+  // Функция запуска анимации двоичного кода
+  function startBinaryAnimation() {
+    let letters = "Хорошая работа, юный гений! Гораций одобряет твою работу";
+    let currentIndex = 0;
+    binaryDisplay.innerHTML = "";
 
+    const interval = setInterval(() => {
+      binaryDisplay.innerHTML += letters[currentIndex];
+      currentIndex++;
 
+      if (currentIndex >= letters.length) {
+        clearInterval(interval);
+        setTimeout(resetDisplay, 2000); // Возвращаем всё обратно через 2 секунды
+      }
+    }, 70);
+  }
+
+  // Сброс текста и слотов к исходному состоянию
+  function resetDisplay() {
+    binaryDisplay.innerHTML = originalText;
+    slots.forEach((slot) => {
+      slot.style.display = "block";
+    });
+  }
+
+  // Сброс текста при перезагрузке
+  window.addEventListener("load", () => {
+    binaryDisplay.innerHTML = originalText;
+  });
+
+  // шестой экран
+  let clickCountSec6 = 0;
+
+  const boardElements = document.querySelectorAll(".board1, .board2");
+  const hiddenImages = [
+    document.querySelector(".line1_sec6"),
+    document.querySelector(".line2_sec6"),
+    document.querySelector(".line3_sec6"),
+  ];
+
+  boardElements.forEach(function (board) {
+    board.addEventListener("click", function () {
+      if (clickCountSec6 < hiddenImages.length) {
+        hiddenImages[clickCountSec6].classList.remove("hidden");
+        clickCountSec6++;
+
+        if (clickCountSec6 === hiddenImages.length) {
+          startChessAnimation();
+        }
+      }
+    });
+  });
+
+  function startChessAnimation() {
+    const section6 = document.querySelector(".section6");
+    section6.classList.add("chess-pattern");
+  }
 });

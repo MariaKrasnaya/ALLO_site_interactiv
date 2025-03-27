@@ -69,25 +69,8 @@
 .numbers {
   width: 20vw;
   justify-content: center;
-  animation: numbers 2s ease-in-out infinite;
-  animation-play-state: running;
+
   cursor: pointer;
-}
-
-@keyframes numbers {
-  0% {
-    color: white;
-  }
-  50% {
-    color: #fa4a22;
-  }
-  100% {
-    color: white;
-  }
-}
-
-.numbers:hover {
-  animation-play-state: paused;
 }
 
 .information {
@@ -286,20 +269,6 @@ button:hover {
   }
 }
 
-/* Эффект шумного телефизора
-.noise-effect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1;
-  mix-blend-mode: screen; /* Дает эффект "свечения" синего шума
-  transition: opacity 0.5s ease;
-}  */
-
 .section4 {
   display: flex;
   justify-content: center;
@@ -404,6 +373,49 @@ button:hover {
   position: relative;
 }
 
+.info_sec5 {
+  position: absolute;
+  margin-left: 93vw;
+  margin-top: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7vw;
+  height: 7.2vw;
+  background-color: black;
+  cursor: pointer;
+  animation: puls 2s ease-in-out infinite;
+}
+
+.info_sec5 p {
+  color: #fa4a22;
+  font-family: "FliegeMono";
+  font-weight: 400;
+  font-size: 6vw;
+}
+
+.info_sec5 p:hover {
+  color: white;
+}
+
+.info-bubble {
+  position: absolute;
+  top: 10vw;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  font-family: "FliegeMono", monospace;
+  font-size: 1.2vw;
+  padding: 1vw 2vw;
+  border-radius: 0.5vw;
+  max-width: 30vw;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s;
+}
+
 /* Двоичный код по центру */
 .binary-display {
   color: #fa4a22;
@@ -461,7 +473,113 @@ button:hover {
   transition: transform 0.2s ease;
 }
 
-.binary-slot:hover{
-transform: scale(1.5);
-color: #0051ff;
+.binary-slot:hover {
+  transform: scale(1.5);
+  color: #0051ff;
+}
+
+/* шестой экран */
+.section6 {
+  width: 100vw;
+  height: 56vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #000000;
+}
+
+.text_sec6 {
+  width: 30vw;
+  height: 56vw;
+  padding: 2vw;
+  overflow-y: hidden;
+  color: #0051ff;
+  font-family: "FliegeMono", monospace;
+  font-size: 1vw;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.crypto-text_sec6 {
+  white-space: pre-line;
+  animation: scrollText 10s linear infinite;
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateY(170%);
+  }
+  to {
+    transform: translateY(-170%);
+  }
+}
+
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+}
+
+.board1,
+.board2 {
+  width: 30vw;
+  cursor: pointer;
+}
+
+.hidden-images {
+  width: 3vw;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vw;
+}
+
+.hidden {
+  display: none;
+}
+
+.line1_sec6 {
+  width: 44vw;
+  height: 40vw;
+  margin-top: -17vw;
+  margin-left: 29vw;
+  position: absolute;
+}
+
+.line2_sec6 {
+  width: 32vw;
+  height: 34vw;
+  margin-top: -18vw;
+  position: absolute;
+  margin-left: 23vw;
+}
+
+.line3_sec6 {
+  width: 30vw;
+  height: 13vw;
+  margin-top: 3vw;
+  position: absolute;
+  margin-left: 31vw;
+}
+
+.chess-pattern {
+  background: repeating-linear-gradient(
+      0deg,
+      black 0%,
+      black 50%,
+      #fa4a22 50%,
+      #fa4a22 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      black 0%,
+      black 50%,
+      #fa4a22 50%,
+      #fa4a22 100%
+    );
+  background-size: 10vw 10vw;
 }
