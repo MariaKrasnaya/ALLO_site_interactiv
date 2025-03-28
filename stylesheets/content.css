@@ -1,7 +1,10 @@
-* {
-  box-sizing: border-box;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
 }
-
 @font-face {
   font-family: "FliegeMono";
   src: url("../fonts/FliegeMonoVF.woff2") format("woff");
@@ -17,15 +20,18 @@
 .columns_all {
   display: flex;
   flex-direction: row;
-  width: 100vw;
+  width: 100%;
   height: 100vw;
   flex-wrap: nowrap;
   cursor: pointer;
+  overflow: hidden; /* Обрежет выходящие элементы */
 }
 
 .column {
-  width: 20vw;
+  flex: 1; /* Равномерное распределение */
   height: 56vw;
+  background-size: cover; /* Лучше, чем 100% auto */
+  background-position: center;
 }
 
 .n1 {
@@ -58,25 +64,30 @@
   display: flex;
   flex-direction: row;
   position: absolute;
+  justify-content: space-between; /* Равномерное распределение */
+  align-items: center; /* Центрируем */
   color: white;
   font-family: "FliegeMono";
   font-weight: 400;
   font-size: 3vw;
-  margin-left: 9%;
-  margin-top: 51vw;
+  left: 0;
+  top: 51vw;
+  /* padding: 0 0vw; */
 }
 
 .numbers {
   width: 20vw;
-  justify-content: center;
-
+  display: flex;
+  justify-content: center; /* Центрируем */
+  align-items: center;
+  text-align: center;
   cursor: pointer;
 }
 
 .information {
   position: absolute;
-  margin-left: 93vw;
-  margin-top: -100vw;
+  right: 0vw;
+  top: 0vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -492,7 +503,7 @@ button:hover {
 .text_sec6 {
   width: 30vw;
   height: 56vw;
-  padding: 2vw;
+  padding-right: 2vw;
   overflow-y: hidden;
   color: #0051ff;
   font-family: "FliegeMono", monospace;

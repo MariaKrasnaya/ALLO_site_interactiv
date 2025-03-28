@@ -1,6 +1,8 @@
 /* ///////////////////////// Мобильные устройства ///////////////////////// */
 @media screen and (max-width: 414px) and (orientation: portrait) {
   /* Вертикальная ориентация для мобильных устройств иногда 430px */
+  .section {
+  }
 }
 
 @media screen and (max-width: 414px) and (orientation: landscape) {
