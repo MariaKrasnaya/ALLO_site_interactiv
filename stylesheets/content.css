@@ -24,13 +24,13 @@ body {
   height: 100vw;
   flex-wrap: nowrap;
   cursor: pointer;
-  overflow: hidden; /* Обрежет выходящие элементы */
+  overflow: hidden;
 }
 
 .column {
-  flex: 1; /* Равномерное распределение */
+  flex: 1;
   height: 56vw;
-  background-size: cover; /* Лучше, чем 100% auto */
+  background-size: cover;
   background-position: center;
 }
 
@@ -64,21 +64,20 @@ body {
   display: flex;
   flex-direction: row;
   position: absolute;
-  justify-content: space-between; /* Равномерное распределение */
-  align-items: center; /* Центрируем */
+  justify-content: space-between;
+  align-items: center;
   color: white;
   font-family: "FliegeMono";
   font-weight: 400;
   font-size: 3vw;
   left: 0;
   top: 51vw;
-  /* padding: 0 0vw; */
 }
 
 .numbers {
   width: 20vw;
   display: flex;
-  justify-content: center; /* Центрируем */
+  justify-content: center;
   align-items: center;
   text-align: center;
   cursor: pointer;
@@ -126,7 +125,6 @@ body {
   color: white;
 }
 
-/* Стили для всплывающего окна */
 .popup_i {
   display: none;
   position: fixed;
@@ -135,8 +133,8 @@ body {
   width: 100%;
   height: 100%;
   justify-content: center;
-  align-items: flex-start; /* Прижимаем окно к верху */
-  background: rgba(0, 0, 0, 0.6); /* Затемнение фона */
+  align-items: flex-start;
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1000;
 }
 
@@ -151,7 +149,6 @@ body {
   border-radius: 2px;
 }
 
-/* Стиль текста внутри окна */
 .popup_i-content p {
   font-family: "FliegeMono";
   font-weight: 400;
@@ -161,7 +158,6 @@ body {
   line-height: 1.5vw;
 }
 
-/* второй экран */
 .section2 {
   position: relative;
   width: 100vw;
@@ -175,15 +171,14 @@ body {
   font-family: "FliegeMono";
   font-weight: 400;
   font-size: 6vw;
-  user-select: none; /* Запрещаем выделение текста */
+  user-select: none;
   transition: all 0.5s ease-in-out;
-  hyphens: auto; /* Автоматический перенос по слогам */
-  word-break: break-word; /* Перенос длинных слов */
+  hyphens: auto;
+  word-break: break-word;
 }
 
-/* Зададим свой стиль курсору */
 .section2.active {
-  cursor: url("../images/cursor_sec_2.png") 16 16, auto; /* 16 16 — координаты точки клика */
+  cursor: url("../images/cursor_sec_2.png") 16 16, auto;
 }
 
 .section3 {
@@ -270,7 +265,6 @@ button:hover {
   animation: glitchMove 0.1s infinite alternate;
 }
 
-/* Эффект глитча */
 @keyframes glitchMove {
   0% {
     transform: translateY(-50%) translateX(0);
@@ -332,30 +326,25 @@ button:hover {
   }
 }
 
-/* Синий экран смерти */
 .blueScreen {
   background-color: #0051ff;
   color: #fa4a22;
 }
 
-/* Стили обычных блоков */
 .block {
   position: absolute;
   background-color: #0051ff;
 }
 
-/* Красные горизонтальные блоки */
 .red {
   background-color: #fa4a22;
 }
 
-/* Блоки хаоса при синем экране смерти */
 .chaosBlock {
   position: absolute;
   background-color: #0051ff;
 }
 
-/* Анимация для синего экрана */
 @keyframes flicker {
   0% {
     opacity: 0.8;
@@ -372,7 +361,6 @@ button:hover {
   animation: flicker 0.2s infinite;
 }
 
-/* пятый экран */
 .section5 {
   width: 100vw;
   height: 56vw;
@@ -427,7 +415,6 @@ button:hover {
   transition: opacity 0.5s ease-in-out, visibility 0.5s;
 }
 
-/* Двоичный код по центру */
 .binary-display {
   color: #fa4a22;
   font-family: "FliegeMono", monospace;
@@ -441,7 +428,6 @@ button:hover {
   overflow-wrap: break-word;
 }
 
-/* Черный блок снизу */
 .binary-container {
   width: 80vw;
   height: 10vw;
@@ -454,7 +440,6 @@ button:hover {
   padding: 0 1vw;
 }
 
-/* Вертикальные разделительные линии */
 .binary-container::before,
 .binary-container::after {
   content: "";
@@ -473,7 +458,6 @@ button:hover {
   right: 0;
 }
 
-/* Слоты с двоичными блоками */
 .binary-slot {
   color: #fa4a22;
   font-family: "FliegeMono", monospace;
@@ -489,7 +473,6 @@ button:hover {
   color: #0051ff;
 }
 
-/* шестой экран */
 .section6 {
   width: 100vw;
   height: 56vw;

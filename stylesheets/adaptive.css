@@ -1,60 +1,262 @@
-/* ///////////////////////// Мобильные устройства ///////////////////////// */
 @media screen and (max-width: 414px) and (orientation: portrait) {
-  /* Вертикальная ориентация для мобильных устройств иногда 430px */
-  .section {
+  .section1 {
+    height: 133vw;
+  }
+  .columns_all {
+    height: 133vw;
+  }
+  .number {
+    top: 121vw;
+    font-size: 7vw;
+  }
+  .column {
+    height: 134vw;
+  }
+  .information {
+    width: 13vw;
+    height: 13.2vw;
+  }
+  .information p {
+    font-size: 9vw;
+  }
+  .popup_i-content {
+    width: 55vw;
+  }
+  .popup_i-content p {
+    font-size: 4vw;
+    line-height: 6.5vw;
+  }
+  .glitchText {
+    font-size: 9vw;
+  }
+  .section3 {
+    height: 134vw;
+  }
+  .blue-panel {
+    width: 68%;
+    padding: 7vw;
+    max-width: 620px;
+  }
+  .blue-panel h2 {
+    font-size: 4vw;
+    padding-top: 4vw;
+  }
+  .input {
+    height: 4vw;
+  }
+  .floating-text {
+    font-size: 14vw;
+  }
+  .section4 {
+    height: 134vw;
+  }
+  .text-container {
+    font-size: 3.5vw;
+    line-height: 5vw;
+  }
+
+  .section5 {
+    height: 133vw;
+  }
+
+  .binary-container {
+    width: 77vw;
+    height: 21vw;
+  }
+  .binary-container::before,
+  .binary-container::after {
+    height: 21vw;
+  }
+  .binary-slot {
+    font-size: 4vw;
+  }
+  .binary-display {
+    width: 80vw;
+    font-size: 4vw;
+    line-height: 5.4vw;
+    margin-top: 10vw;
+  }
+  .info_sec5 {
+    height: 21vw;
+  }
+  .info_sec5 p {
+    font-size: 7vw;
+  }
+  .info-bubble {
+    top: 11vw;
+    font-size: 3.2vw;
+    padding: 7vw 7vw;
+    max-width: 52vw;
+  }
+  .section6 {
+    height: 134vw;
+  }
+  .text_sec6 {
+    position: absolute;
+    font-size: 3vw;
+    width: 100vw;
+    height: 39vw;
+    margin-top: 94vw;
+  }
+  @keyframes scrollText {
+    from {
+      transform: translateX(200%);
+    }
+    to {
+      transform: translateX(-200%);
+    }
+  }
+  .board1,
+  .board2 {
+    width: 43vw;
+  }
+  .line1_sec6 {
+    width: 64vw;
+    height: 55vw;
+    margin-top: -23vw;
+    margin-left: 0vw;
+  }
+  .line2_sec6 {
+    width: 46vw;
+    height: 45vw;
+    margin-top: -25vw;
+    margin-left: -9vw;
+  }
+  .line3_sec6 {
+    width: 37vw;
+    height: 22vw;
+    margin-top: 3vw;
+    margin-left: 2vw;
   }
 }
-
-@media screen and (max-width: 414px) and (orientation: landscape) {
-  /* Горизонтальная ориентация для мобильных устройств */
-}
-
-/* ///////////////////////// Планшеты ///////////////////////// */
 @media screen and (min-width: 415px) and (max-width: 768px) and (orientation: portrait) {
-  /* Вертикальная ориентация для планшетов */
-}
+  .section1 {
+    height: 133vw;
+  }
+  .columns_all {
+    height: 133vw;
+  }
+  .number {
+    top: 121vw;
+    font-size: 7vw;
+  }
+  .column {
+    height: 134vw;
+  }
+  .information {
+    width: 13vw;
+    height: 13.2vw;
+  }
+  .information p {
+    font-size: 9vw;
+  }
+  .popup_i-content {
+    width: 55vw;
+  }
+  .popup_i-content p {
+    font-size: 4vw;
+    line-height: 6.5vw;
+  }
+  .glitchText {
+    font-size: 9vw;
+  }
+  .section3 {
+    height: 134vw;
+  }
+  .blue-panel {
+    width: 68%;
+    padding: 7vw;
+    max-width: 620px;
+  }
+  .blue-panel h2 {
+    font-size: 4vw;
+    padding-top: 4vw;
+  }
+  .input {
+    height: 4vw;
+  }
+  .floating-text {
+    font-size: 14vw;
+  }
+  .section4 {
+    height: 134vw;
+  }
+  .text-container {
+    font-size: 3.5vw;
+    line-height: 5vw;
+  }
 
-@media screen and (min-width: 415px) and (max-width: 768px) and (orientation: landscape) {
-  /* Горизонтальная ориентация для планшетов */
-}
+  .section5 {
+    height: 133vw;
+  }
 
-/* ///////////////////////// Маленькие экраны ///////////////////////// */
-@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
-  /* Вертикальная ориентация для экранов от 769px до 1024px (маленькие экраны) */
-}
-
-@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
-  /* Горизонтальная ориентация для экранов от 769px до 1024px (маленькие экраны) */
-}
-
-/* ///////////////////////// Средние экраны ///////////////////////// */
-@media screen and (min-width: 1025px) and (max-width: 1366px) and (orientation: portrait) {
-  /* Вертикальная ориентация для экранов от 1025px до 1366px */
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
-  /* Горизонтальная ориентация для экранов от 1025px до 1366px */
-}
-
-/* ///////////////////////// Большие экраны ///////////////////////// */
-@media screen and (min-width: 1367px) and (max-width: 1920px) and (orientation: portrait) {
-  /* Вертикальная ориентация для экранов от 1367px до 1920px */
-}
-
-@media screen and (min-width: 1367px) and (max-width: 1920px) and (orientation: landscape) {
-  /* Горизонтальная ориентация для экранов от 1367px до 1920px */
-}
-
-/* ///////////////////////// Очень большие экраны ///////////////////////// */
-@media screen and (min-width: 1921px) and (orientation: portrait) {
-  /* Вертикальная ориентация для экранов шире 1920px */
-}
-
-@media screen and (min-width: 1921px) and (orientation: landscape) {
-  /* Горизонтальная ориентация для экранов шире 1920px */
-}
-
-/* ///////////////////////// Ультра-HD экраны (4K и выше) ///////////////////////// */
-@media screen and (min-width: 2561px) {
-  /* Поддержка для ультра-HD экранов */
+  .binary-container {
+    width: 77vw;
+    height: 21vw;
+  }
+  .binary-container::before,
+  .binary-container::after {
+    height: 21vw;
+  }
+  .binary-slot {
+    font-size: 4vw;
+  }
+  .binary-display {
+    width: 80vw;
+    font-size: 4vw;
+    line-height: 5.4vw;
+    margin-top: 10vw;
+  }
+  .info_sec5 {
+    height: 21vw;
+  }
+  .info_sec5 p {
+    font-size: 7vw;
+  }
+  .info-bubble {
+    top: 11vw;
+    font-size: 3.2vw;
+    padding: 7vw 7vw;
+    max-width: 52vw;
+  }
+  .section6 {
+    height: 134vw;
+  }
+  .text_sec6 {
+    position: absolute;
+    font-size: 3vw;
+    width: 100vw;
+    height: 39vw;
+    margin-top: 94vw;
+  }
+  @keyframes scrollText {
+    from {
+      transform: translateX(200%);
+    }
+    to {
+      transform: translateX(-200%);
+    }
+  }
+  .board1,
+  .board2 {
+    width: 43vw;
+  }
+  .line1_sec6 {
+    width: 64vw;
+    height: 55vw;
+    margin-top: -23vw;
+    margin-left: 0vw;
+  }
+  .line2_sec6 {
+    width: 46vw;
+    height: 45vw;
+    margin-top: -25vw;
+    margin-left: -9vw;
+  }
+  .line3_sec6 {
+    width: 37vw;
+    height: 22vw;
+    margin-top: 3vw;
+    margin-left: 2vw;
+  }
 }
