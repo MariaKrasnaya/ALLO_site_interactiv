@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const textElement = document.getElementById("glitchText");
 
+  // Функция, которая запускает глитч-эффект с волной и плавным исчезновением текста
   function startLongWaveGlitchEffect() {
     const textArray = glitchText.split("");
     let currentPosition = 0;
@@ -132,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pixelSize = 10;
   const brushColor = "#0051FF";
 
+  // Функция, которая рисует пиксельную кисть
   function drawPixelBrush(mouseX, mouseY) {
     canvasContext.fillStyle = brushColor;
     for (let offsetX = 0; offsetX < brushSize; offsetX += pixelSize) {
@@ -172,6 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputField = document.getElementById("userInput");
   const encryptButton = document.getElementById("encryptButton");
 
+  // Функция для создания эффекта глитча
   function glitchEffect(text) {
     const glitchChars = ["#", "%", "&", "@", "£", "¥", "§", "¤", "▓", "█"];
     return text
@@ -204,6 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
         floatingTextElement.style.left = "-100%";
         floatingTextElement.style.transform = "translateY(-50%)";
 
+        // Движение текста + эффект глитча
         let position = -floatingTextElement.clientWidth;
         const speed = 5;
 
@@ -251,6 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const maxClicks = 8;
 
+  // Функция для создания и добавления блока в секцию
   function createBlock(colorClass, isHorizontal = false) {
     const block = document.createElement("div");
     block.classList.add("block");
@@ -276,6 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
     section4.appendChild(block);
   }
 
+  // Функция для хаотичного движения блоков при "синем экране смерти"
   function createChaosBlock() {
     const chaosBlock = document.createElement("div");
     chaosBlock.classList.add("chaosBlock");
@@ -317,6 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    // Синий экран смерти на 7-й клик
     if (clickCount === 7) {
       section4.classList.add("blueScreen");
       for (let i = 0; i < 20; i++) {
@@ -393,6 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Функция запуска анимации двоичного кода
   function startBinaryAnimation() {
     let letters = "Хорошая работа, юный гений! Гораций одобряет твою работу";
     let currentIndex = 0;
